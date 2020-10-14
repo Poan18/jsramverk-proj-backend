@@ -1,0 +1,8 @@
+node_modules/
+*.sqlite
+
+# Instanbul coverage
+coverage
+
+# Nyc test coverage
+.nyc_output

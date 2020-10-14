@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE IF NOT EXISTS Users (
+    Email VARCHAR(255) NOT NULL,
+    Password VARCHAR(60) NOT NULL,
+    UNIQUE(Email)
+);
