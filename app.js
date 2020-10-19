@@ -11,6 +11,7 @@ const login = require('./routes/login');
 const logout = require('./routes/logout');
 const userInfo = require('./routes/userInfo');
 const addBalance = require('./routes/addBalance');
+const objects = require('./routes/objects');
 
 const app = express();
 const port = 1338;
@@ -32,6 +33,7 @@ app.use('/login', login);
 app.use('/logout', logout);
 app.use('/userInfo', userInfo);
 app.use('/addBalance', addBalance);
+app.use('/objects', objects);
 
 
 // Start up server

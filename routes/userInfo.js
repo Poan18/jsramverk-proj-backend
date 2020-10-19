@@ -11,4 +11,12 @@ router.get("/:email", (req, res) => {
     })
 });
 
+router.get("/inventory/:email", (req, res) => {
+    db.all("SELECT UserEmail, ObjectName, SUM(ObjectAmount) as ObjectAmount FROM UserObjects WHERE UserEmail = ? GROUP BY ObjectName",
+    req.params.email,
+    (err, userInventory) => {
+        res.json(userInventory);
+    })
+});
+
 module.exports = router;
