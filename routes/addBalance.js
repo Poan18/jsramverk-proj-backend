@@ -48,7 +48,7 @@ function checkToken(req, res, next) {
             res.json({
                 data: {
                     type: "token-error",
-                    error: "Invalid token",
+                    msg: `Invalid token.`
                 }
             });
         } else {
