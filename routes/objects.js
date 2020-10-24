@@ -78,6 +78,7 @@ router.post("/buy/:name",
             }
             if (objectInfo) {
                 // UPDATE if user already has these objects
+
                 var newAmount = objectInfo.ObjectAmount + parseInt(amount);
 
                 db.run("UPDATE UserObjects SET ObjectAmount = ? WHERE UserEmail = ? AND ObjectName = ?",
@@ -136,6 +137,17 @@ router.post("/sell/:name",
         email,
         animalName,
         (err, objectInfo) => {
+            if (objectInfo == undefined) {
+                res.json({
+                    data: {
+                        status: 400,
+                        msg: `No owned ${animalName} objects found.`
+                    }
+                })
+                enough = false;
+                return;
+            }
+
             var newAmount = objectInfo.ObjectAmount - parseInt(amount);
             if (newAmount > 0) {
                 // UPDATE if user already has these objects
