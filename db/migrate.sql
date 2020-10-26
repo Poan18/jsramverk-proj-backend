@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Objects (
 );
 
 INSERT INTO Objects (Name, Price, Amount) VALUES
-('Cat', 100, 1000), ('Dog', 200, 1000), ('Crocodile', 400, 1000), ('Mammoth', 1000, 1000), ('Giant', 2000, 1000), ('Dragon', 10000, 1000);
+('Cat', 200, 1000), ('Dog', 200, 1000), ('Crocodile', 200, 1000), ('Mammoth', 200, 1000), ('Giant', 200, 1000), ('Dragon', 200, 1000);
 
 DROP TABLE IF EXISTS UserObjects;
 

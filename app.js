@@ -46,12 +46,18 @@ cron.schedule('*/10 * * * * *', () => {
     var animal = animals[Math.floor(Math.random()*animals.length)];
     var num = Math.floor(Math.random() * Math.floor(2));
     if (num == 0) {
-        num = -1;
+        num = -5;
+    } else {
+        num = 5;
     }
 
     db.get("SELECT * FROM Objects WHERE Name = ?",
     animal,
     (err, animalInfo) => {
+        if (animalInfo.Price < 100) {
+            num = 5;
+        }
+        
         db.run("UPDATE Objects Set PRICE = ? WHERE Name = ?",
             animalInfo.Price+num,
             animal,
