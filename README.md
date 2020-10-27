@@ -8,9 +8,11 @@ cookie parser (https://www.npmjs.com/package/cookie-parser) Used to send cookies
 
 bcrypt.js (https://www.npmjs.com/package/bcryptjs) - Used to safely hash user passwords.
 
-express-ws (https://www.npmjs.com/package/express-ws) - Used to open and control a websocket endpoint on the server.
+express-ws (https://www.npmjs.com/package/express-ws) - Used to open and control a websocket endpoint on the server. When the client sends a message to the endpoint, it returns JSON containing all object names together with prices.
 
 node-cron (https://www.npmjs.com/package/node-cron) - Used to schedule price updates, in order to simulate real world trading.
+
+
 
 
 Available commands:
